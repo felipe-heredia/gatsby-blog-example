@@ -1,6 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
+import * as S from "./styled"
+
 const Profile = () => {
 	const {
 		site: {
@@ -18,10 +20,12 @@ const Profile = () => {
 	`)
 
 	return (
-		<div className="Profile-wrapper">
-			<h1>{title}</h1>
-			<h2>{description}</h2>
-		</div>
+		<S.ProfileWrapper>
+			<S.ProfileLink>
+				<S.ProfileAuthor>{title}</S.ProfileAuthor>
+				<S.ProfileDescription>{description}</S.ProfileDescription>
+			</S.ProfileLink>
+		</S.ProfileWrapper>
 	)
 }
 
