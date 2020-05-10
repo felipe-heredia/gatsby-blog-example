@@ -5,12 +5,17 @@ import Icons from "./Icons"
 
 const Menubar = () => {
 	const [theme, setTheme] = useState(null)
+	const [display, setDisplay] = useState(null)
 
 	const isDarkMode = theme === "dark"
+	const isListMode = display === "list"
 
 	useEffect(() => {
 		setTheme(window.__theme)
+		setDisplay(window.__display)
+
 		window.__onThemeChange = () => setTheme(window.__theme)
+		window.__onDisplayChange = () => setDisplay(window.__display)
 	}, [])
 
 	return (
@@ -37,8 +42,13 @@ const Menubar = () => {
 				>
 					<Icons.Light />
 				</S.MenuBarItem>
-				<S.MenuBarItem title="Mudar visualização">
-					<Icons.Grid />
+				<S.MenuBarItem
+					title="Mudar visualização"
+					onClick={() => {
+						window.__setPreferredDisplay(isListMode ? "grid" : "list")
+					}}
+				>
+					{isListMode ? <Icons.Grid /> : <Icons.List />}
 				</S.MenuBarItem>
 				<S.MenuBarItem title="Ir para o topo">
 					<Icons.Arrow />
