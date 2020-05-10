@@ -7,7 +7,7 @@ module.exports = {
 		title: `FelipeSuri`,
 		description: `Um simples blog que irá aprender com você sobre programação.`,
 		author: `@felipesuri`,
-		siteUrl: `https://felipesuri.com.br`,
+		siteUrl: `https://curso-gatsby.netlify.app/`,
 	},
 	plugins: [
 		`gatsby-plugin-transition-link`,
