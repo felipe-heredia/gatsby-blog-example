@@ -9,6 +9,7 @@ module.exports = {
 		author: `@felipesuri`,
 	},
 	plugins: [
+		`gatsby-plugin-transition-link`,
 		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-react-helmet`,
 		// Need to be the first to work with gatsby-remark-images

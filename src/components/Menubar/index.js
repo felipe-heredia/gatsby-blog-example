@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react"
 import * as S from "./styled"
 import Icons from "./Icons"
 
+import getThemeColor from "../../utils/getThemeColor"
+
 const Menubar = () => {
 	const [theme, setTheme] = useState(null)
 	const [display, setDisplay] = useState(null)
@@ -21,12 +23,26 @@ const Menubar = () => {
 	return (
 		<S.MenuBarWrapper>
 			<S.MenuBarGroup>
-				<S.MenuBarLink to="/" title="Voltar para a Home">
+				<S.MenuBarLink
+					to="/"
+					title="Voltar para a Home"
+					cover
+					direction="right"
+					bg={getThemeColor()}
+					duration={0.6}
+				>
 					<S.MenuBarItem>
 						<Icons.Home />
 					</S.MenuBarItem>
 				</S.MenuBarLink>
-				<S.MenuBarLink to="/search/" title="Pesquisar">
+				<S.MenuBarLink
+					to="/search/"
+					title="Pesquisar"
+					cover
+					direction="right"
+					bg={getThemeColor()}
+					duration={0.6}
+				>
 					<S.MenuBarItem>
 						<Icons.Search />
 					</S.MenuBarItem>
